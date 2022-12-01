@@ -1,0 +1,348 @@
+\documentclass[8pt]{article}
+
+\usepackage{amsmath}
+\usepackage{mathbbol}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amscd}
+\usepackage{latexsym}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{cancel}
+\usepackage{xcolor}
+\usepackage[a4paper, total={14cm, 26cm}]{geometry}
+\renewcommand{\contentsname}{Contenido}
+\newcommand{\Cancel}[2][black]{{\color{#1}\cancel{\color{black}#2}}} %\Cancel[red]{x}
+
+% Info
+\author{Jorge Antonio Gómez García}
+\date{\today}
+\title{Temas de estudio para el examen de Estadística I}
+
+
+\begin{document}
+\maketitle
+% \tableofcontents
+
+\paragraph*{\hyperref[paragraph:assets]{Referencias y recursos útiles}}
+\label{paragraph:assets_tag}
+
+
+\section*{Demostraciones:}
+\label{sec:demostraciones}
+
+\begin{enumerate}
+
+    \item \hyperref[subsec:colorario413]{Colorario 4.13}.
+        \label{subsec:colorario413_tag}
+    \item \hyperref[subsec:teorema414]{Teorema 4.14}.
+        \label{subsec:teorema414_tag}
+
+    \item \hyperref[subsec:distribucion_binomial]{Distribución Binomial:}
+        \label{subsec:distribucion_binomial_tag}
+    \begin{itemize}
+        \item \hyperref[subsec:funciongeneradora_binom]{Función generadora de momentos}.
+            \label{subsec:funciongeneradora_binom_tag}
+        \item \hyperref[subsec:esperanza_binom]{Esperanza}.
+            \label{subsec:esperanza_binom_tag}
+        \item \hyperref[subsec:varianza_binom]{Varianza}.
+            \label{subsec:varianza_binom_tag}
+    \end{itemize}
+    
+    \item \hyperref[subsec:distribucion_poisson]{Distribución \textit{Poisson}:}
+        \label{subsec:distribucion_poisson_tag}
+    \begin{itemize}
+        \item \hyperref[subsec:funciongeneradora_poisson]{Función generadora de momentos}.
+            \label{subsec:funciongeneradora_poisson_tag}
+        \item \hyperref[subsec:esperanza_poisson]{Esperanza}.
+            \label{subsec:esperanza_poisson_tag}
+        \item \hyperref[subsec:varianza_poisson]{Varianza}.
+            \label{subsec:varianza_poisson_tag}
+    \end{itemize}
+    
+    \item \hyperref[subsec:distribucion_gamma]{Distribución \textit{Gamma}:}
+        \label{subsec:distribucion_gamma_tag}
+    \begin{itemize}
+        \item \hyperref[subsec:funciongeneradora_gamma]{Función generadora de momentos}.
+            \label{subsec:funciongeneradora_gamma_tag}
+        \item \hyperref[subsec:esperanza_gamma]{Esperanza}.
+            \label{subsec:esperanza_gamma_tag}
+        \item \hyperref[subsec:varianza_gamma]{Varianza}.
+            \label{subsec:varianza_gamma_tag}
+    \end{itemize}
+
+    \item \hyperref[subsec:distribucion_normal]{Distribución Normal:}
+        \label{subsec:distribucion_normal_tag}
+    \begin{itemize}
+        \item \hyperref[subsec:funciongeneradora_normal]{Función generadora de momentos}.
+            \label{subsec:funciongeneradora_normal_tag}
+        \item \hyperref[subsec:esperanza_normal]{Esperanza}.
+            \label{subsec:esperanza_normal_tag}
+        \item \hyperref[subsec:varianza_normal]{Varianza}.
+            \label{subsec:varianza_normal_tag}
+    \end{itemize}
+
+    \item Estudiar multivariable antes de covarianza.
+    \item Candidatos a venir en el examen: ejercicios \textbf{5.65} y \textbf{5.86} del Wackerly. \\
+        Ejercicio \textbf{6.64} no viene en el examen.
+    
+\end{enumerate}
+
+\subsection*{\hyperref[subsec:colorario413_tag]{Colorario 4.13}}
+\label{subsec:colorario413}
+
+Si $Y_1$ y $Y_2$ son variables aleatorias independientes, demuestre que:
+
+\begin{align*}
+    \text{cov}\left(Y_1, Y_2\right) = 0.
+\end{align*}
+
+\paragraph*{D!} Sea $Y_1$ y $Y_2$ variables aleatorias independientes, y $\mu_1$ y $\mu_2$ sus respectivas medias, además, sea
+
+\begin{align*}
+    \mu_i = \text{E}[Y_i], \quad i = 1, 2\text{,}
+\end{align*}
+
+Entonces:
+
+\begin{align*}
+    \text{cov}(Y_1, Y_2) &= \text{E}\left[\left(Y_1 - \mu_1\right)\left(Y_2 - \mu_2\right)\right] \\
+    &= \text{E}\left[Y_1 Y_2\right] - \mu_1\mu_2 \\
+    &= \text{E}\left[Y_1 Y_2\right] - \text{E}\left[Y_1\right]\text{E}\left[Y_2\right] \\
+    &= \text{E}\left[Y_1\right]\text{E}\left[Y_2\right] - \text{E}\left[Y_1\right]\text{E}\left[Y_2\right] \\
+    &= 0
+\end{align*}\qed
+ 
+\subsection*{\hyperref[subsec:teorema414_tag]{Teorema 4.14}}
+\label{subsec:teorema414}
+
+Sean $X_i$ y $Y_j$ variables aleatorias para $1 \leq i \leq n$ y $1 \leq j \leq m$. Entonces para las constantes $a_i$ y $b_j$, $1 \leq i \leq n$ y $1 \leq j \leq m$, demuestre que:
+
+\begin{align*}
+    \text{cov}\left(\sum_{i=1}^n a_i X_i, \sum_{j=1}^m b_j Y_j\right) = \sum_{i=1}^n \sum_{j=1}^m a_i b_j \text{cov}\left(X_i, Y_j\right).
+\end{align*}
+
+\paragraph*{D!} Sea $X_i$ y $Y_j$ variables aleatorias para $1 \leq i \leq n$ y $1 \leq j \leq m$, y recuerde que la definición de covarianza es:
+
+\begin{align*}
+    \text{cov}\left(X, Y\right) &:= \text{E}\left[\left(X - \text{E}[X]\right)\left(Y - \text{E}[Y]\right)\right] \\
+    &= \text{E}\left[X Y\right] - \text{E}\left[X\right]\text{E}\left[Y\right]
+\end{align*}
+
+Entonces:
+
+\begin{align*}
+    \text{cov}\left(\sum_{i=1}^n a_i X_i, \sum_{j=1}^m b_j Y_j\right) &= \text{E}\left[\left(\sum_{i=1}^n a_i X_i\right)\left(\sum_{j=1}^m b_j Y_j\right)\right] - \text{E}\left[\sum_{i=1}^n a_i X_i\right]\cdot\text{E}\left[\sum_{j=1}^m b_j Y_j\right] \\
+    &= \text{E}\left[\sum_{i=1}^n \sum_{j=1}^m a_i b_j X_i Y_j\right] - \text{E}\left[\sum_{i=1}^n a_i X_i\right]\cdot\text{E}\left[\sum_{j=1}^m b_j Y_j\right] \\
+    &= \sum_{i=1}^n \sum_{j=1}^m a_i b_j \text{E}\left[X_i Y_j\right] - \text{E}\left[\sum_{i=1}^n a_i X_i\right]\cdot\text{E}\left[\sum_{j=1}^m b_j Y_j\right] \\
+    &= \sum_{i=1}^n \sum_{j=1}^m a_i b_j \text{E}\left[X_i Y_j\right] - \sum_{i=1}^n a_i \text{E}\left[X_i\right]\cdot\sum_{j=1}^m b_j \text{E}\left[Y_j\right] \\
+    &= \sum_{i=1}^n \sum_{j=1}^m a_i b_j \text{E}\left[X_i Y_j\right] - \sum_{i=1}^n \sum_{j=1}^m a_i b_j \text{E}\left[X_i\right]\text{E}\left[Y_j\right] \\
+    &= \sum_{i=1}^n \sum_{j=1}^m a_i b_j \left(\text{E}\left[X_i Y_j\right] - \text{E}\left[X_i\right]\text{E}\left[Y_j\right]\right) \\
+    &= \sum_{i=1}^n \sum_{j=1}^m a_i b_j \text{cov}\left(X_i, Y_j\right)
+\end{align*}\qed
+
+\subsection*{Ejercicio *5.86}
+
+Suponga que $Z$ es una variable aleatoria normal estándar y que $Y_1$ y $Y_2$ son variables aleatorias con distribución $\chi^2$ con $\nu_1$ y $\nu_2$ grados de libertad, respectivamente. Además. suponga que $Z$, $Y_1$ y $Y_2$ son independientes.
+
+\begin{enumerate}
+    \item Defina $W = \dfrac{Z}{\sqrt{Y_1}}$. Encuentre $\text{E}[W]$ y $\text{var}[W]$. ¿Qué suposiciones se necesitan acerca del valor de $\nu_1$? [\textit{Sugerencia}: $W = Z(1/\sqrt{Y_1}) = g(Z)h(Y_1)$. El ejercicio \textbf{4.112} puede ayudarle]. \\\\
+    
+    \paragraph*{Esperanza. D!}
+    \begin{align*}
+        \text{E}[W] &= \text{E}\left[Z \cdot \frac{1}{\sqrt{Y_1}}\right] \\
+        &= \text{E}\left[Z\right]\text{E}\left[\frac{1}{\sqrt{Y_1}}\right] \\
+        &= 0 \cdot \text{E}\left[\frac{1}{\sqrt{Y_1}}\right] \\
+        &= 0
+    \end{align*}\qed
+
+    \paragraph*{Varianza. D!} Sea la definición de varianza:
+    \begin{align*}
+        \text{var}[X] &:= \text{E}\left[\left(X - \text{E}[X]\right)^2\right] \\
+        &= \text{E}\left[X^2\right] - \left(\text{E}\left[X\right]\right)^2
+    \end{align*}
+
+    Entonces tenemos:
+
+    \begin{align*}
+        \text{var}[W] &= \text{var}\left[Z \cdot \frac{1}{\sqrt{Y_1}}\right] \\
+        &= \text{E}\left[\left(Z \cdot \frac{1}{\sqrt{Y_1}}\right)^2\right] - \left(\text{E}\left[Z \cdot \frac{1}{\sqrt{Y_1}}\right]\right)^2 \\
+        &= \text{E}\left[Z^2 \cdot \frac{1}{Y_1}\right] - \left(\text{E}\left[Z\right] \cdot \text{E}\left[\frac{1}{Y_1}\right]\right)^2 \\
+        &= \text{E}\left[Z^2 \cdot \frac{1}{Y_1}\right] - \left(0 \cdot \text{E}\left[\frac{1}{Y_1}\right]\right)^2 \\
+        &= \text{E}\left[Z^2 \cdot \frac{1}{Y_1}\right] - 0 \\
+        &= \text{E}\left[Z^2 \cdot \frac{1}{Y_1}\right] \\
+        &= \text{E}\left[Z^2\right] \cdot \text{E}\left[\frac{1}{Y_1}\right] \\
+        &= [...]
+    \end{align*}
+
+    Note que $Z$ es una variable aleatoria normal estándar, por lo que $\text{E}\left[Z^2\right] = 1$. [...]
+
+    \item Defina $U = Y_1/Y_2$. Encuentre $E(U)$ y $V(U)$. ¿Qué suposiciones se necesitan acerca del valor de $\nu_1$ y $\nu_2$? Use la sugerencia del inciso anterior.
+\paragraph{Esperanza:}
+\paragraph*{D!} Note que $Y_1$ y $Y_2$ son variables aleatorias \textbf{independientes} con distribución $\chi^2$. La esperanza de una función \textit{gamma} es $\text{E}[X] = \alpha\beta$, donde $\alpha$ y $\beta$ son los parámetros de la distribución. En el caso particular de una distribución $\chi^2$ con $\nu$ grados de libertad, $\alpha = \nu / 2$ y $\beta = 2$, entonces, $\text{E}[X] = \nu$. Por lo tanto, $\text{E}[Y_1] = \nu_1$ y $\text{E}[Y_2] = \nu_2$. Así, tenemos que:
+    \begin{align*}
+        \text{E}[U] &= \text{E}\left[\frac{Y_1}{Y_2}\right] \\
+        &= \text{E}\left[Y_1\right]\text{E}\left[\frac{1}{Y_2}\right] \\
+        &= \text{E}\left[Y_1\right]\cdot\frac{1}{\text{E}\left[Y_2\right]} \\
+        &= \nu_1 \cdot \frac{1}{\nu_2} \\
+        &= \frac{\nu_1}{\nu_2}
+    \end{align*}\qed
+
+\paragraph{Varianza:}
+\paragraph*{D!} Note que $Y_1$ y $Y_2$ son variables aleatorias \textbf{independientes} con distribución $\chi^2$. La varianza de una función \textit{gamma} es $\text{var}[X] = \alpha\beta^2$, donde $\alpha$ y $\beta$ son los parámetros de la distribución. En el caso particular de una distribución $\chi^2$ con $\nu$ grados de libertad, $\alpha = \nu / 2$ y $\beta = 2$, entonces, $\text{var}[X] = 2\nu$. Por lo tanto, $\text{var}[Y_1] = 2\nu_1$ y $\text{var}[Y_2] = 2\nu_2$. Así, tenemos que:
+    \begin{align*}
+        \text{var}[U] &= \text{var}\left[\frac{Y_1}{Y_2}\right] \\
+            &= [...]
+    \end{align*}
+
+\end{enumerate}
+
+\subsection*{\hyperref[subsec:distribucion_binomial_tag]{Distribución Binomial}}
+\label{subsec:distribucion_binomial}
+
+\subsubsection*{\hyperref[subsec:funciongeneradora_binom_tag]{Función generadora de momentos}}
+\label{subsec:funciongeneradora_binom}
+
+\paragraph{D!} Sea $X$ una variable aleatoria con distribución binomial, con parámetros $n$ y $p$. Entonces:
+
+\begin{align*}
+    m(t) = \text{E}\left[e^{tX}\right] &= \sum_{k=0}^n e^{tk} \binom{n}{k} p^k (1-p)^{n-k} \\
+    &= \sum_{k=0}^n \binom{n}{k} (pe^{t})^k (1-p)^{n-k} \\
+    &\quad\,\, \text{Por el binomio de Newton tenemos:} \\
+    &= (pe^{t} + 1-p)^n \\
+    &= (pe^{t} + q)^n
+\end{align*}\qed
+
+\subsubsection*{\hyperref[subsec:esperanza_binom_tag]{Esperanza}}
+\label{subsec:esperanza_binom}
+
+\paragraph{D!} Sea $X$ una variable aleatoria con distribución binomial, con parámetros $n$ y $p$. Entonces:
+
+\begin{align*}
+    \text{E}[X] &= \sum_{x=0}^n x \binom{n}{x} p^x (1-p)^{n-x} \\
+    &= \sum_{x=0}^n x \frac{n!}{x!(n-x)!} p^x (1-p)^{n-x} \\
+    &= np \sum_{x=1}^n \frac{(n-1)!}{(x-1)!(n-1-(x-1))!} p^{x-1} (1-p)^{n-1-(x-1)} \\
+    &= np \sum_{x=1}^n \binom{n-1}{x-1} p^{x-1} (1-p)^{n-1-(x-1)}, \quad \text{Cambio de variable: } y = x-1 \\
+    &= np \underbrace{\sum_{y=0}^{n-1} \binom{n-1}{y} p^y (1-p)^{n-1-y}}_{1}, \quad \text{Note que la suma parece bin} (n-1, p) \\
+    &= np \cdot 1 \\
+    &= np
+\end{align*}\qed
+
+\subsubsection*{\hyperref[subsec:varianza_binom_tag]{Varianza}}
+\label{subsec:varianza_binom}
+
+\paragraph{D!} Sea $X$ una variable aleatoria con distribución binomial, con parámetros $n$ y $p$. Entonces:
+
+\paragraph*{Calcule $\text{E}[X^2]$:}
+
+\begin{align*}
+    \text{E}[X^2] &= \sum_{x=0}^n x^2 \binom{n}{x} p^x (1-p)^{n-x} \\
+    &= \sum_{x=0}^n [x+(x-1)+x]\binom{n}{x} p^x (1-p)^{n-x} \\
+    &= \sum_{x=0}^n x(x-1) \binom{n}{x} p^x (1-p)^{n-x} + \underbrace{\sum_{x=0}^n x \binom{n}{x} p^x (1-p)^{n-x}}_{np} \\ 
+    &= \sum_{x=2}^n \frac{n(n-1)(n-2)!}{(x-2)!(n-2-(x-2))!} p^x (1-p)^{n-x} + np \\
+    &= n(n-1)p^2 \sum_{x=2}^n \binom{n-2}{x-2} p^{x-2} (1-p)^{n-2-(x-2)} + np, \quad \text{Cambio de variable: } y = x-2 \\
+    &= n(n-1)p^2 \underbrace{\sum_{y=0}^{n-2} \binom{n-2}{y} p^y (1-p)^{n-2-y}}_{1} + np, \quad \text{Note que la suma parece bin} (n-2, p) \\
+    &= n(n-1)p^2 \cdot 1 + np \\
+    &= n(n-1)p^2 + np
+\end{align*}
+
+\paragraph*{Por lo tanto, ya podemos calcular la varianza $\text{var}[X]$:}
+
+\begin{align*}
+    \text{var}[X] &= \text{E}[X^2] - \left(\text{E}[X]\right)^2 \\
+    &= \underbrace{n(n-1)p^2 + np}_{\text{E}[X^2]} - \underbrace{(np)^2}_{\left(\text{E}[X]\right)^2} \\
+    &= (n^2-n)p^2 + np - n^2p^2 \\
+    &= \Cancel[red]{n^2p^2} - np^2 + np - \Cancel[red]{n^2p^2} \\
+    &=  -np^2 + np \\
+    &=  np(1-p)
+\end{align*}\qed
+
+ 
+\subsection*{\hyperref[subsec:distribucion_poisson_tag]{Distribución Poisson}}
+\label{subsec:distribucion_poisson}
+
+\subsubsection*{\hyperref[subsec:funciongeneradora_poisson_tag]{Función generadora de momentos}}
+
+\paragraph{D!} Sea $X$ una variable aleatoria con distribución Poisson, con parámetro $\lambda$. Entonces:
+
+
+
+
+
+
+\section*{\hyperref[paragraph:assets_tag]{Referencias y recursos útiles}}
+\label{paragraph:assets}
+
+\begin{itemize}
+    \item \textbf{Binomio de Newton.} Sean $m \in \mathbb{N}$ y $x, y \in \mathbb{R}$. El binomio de Newton de grado $m$ es el polinomio:
+    \begin{align*}
+        \left(x+y\right)^m = \sum_{k=0}^m \binom{m}{k} x^k y^{m-k}
+    \end{align*}
+
+    \item \textbf{Propiedad 1 de la ecuación combinatoria:}
+    \begin{align*}
+        k\binom{m}{k} = m\binom{m-1}{k-1}
+    \end{align*}
+
+    \item \textbf{Propiedad 2 de la ecuación combinatoria:}
+    \begin{align*}
+        k^2\binom{m}{k} = m(m-1)\binom{m-2}{k-2} + k\binom{m}{k}
+    \end{align*}
+
+    \item \textbf{Número de Euler ($e$):}
+    \begin{align*}
+        e = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = 1 + \dfrac{1}{1!} + \dfrac{1}{2!} + \dfrac{1}{3!} + \cdots
+    \end{align*}
+
+    \item \textbf{Exponencial de Euler ($e^x$):}
+    \begin{align*}
+        e^x = \sum_{k=0}^{\infty} \dfrac{x^k}{k!}
+    \end{align*}
+
+    En este caso nos referimos al momento de orden $k$ de la variable aleatoria $X$ respecto al origen.
+
+    \item \textbf{Serie de Taylor:}
+    \begin{align*}
+        f(x) &= f(a) + f'(a)(x-a) + \dfrac{f''(a)}{2!}(x-a)^2 + \dfrac{f'''(a)}{3!}(x-a)^3 + \cdots \\
+        &= \sum_{k=0}^{\infty} \dfrac{f^{(k)}(a)}{k!}(x-a)^k
+    \end{align*}
+
+    \item \textbf{Serie de Maclaurin.} Una serie de Maclaurin es un serie de Taylor $f(x)$ con $a=0$
+    \begin{align*}
+        f(x) &= \sum_{k=0}^{\infty} \dfrac{f^{(k)}(0)}{k!}x^k
+    \end{align*}
+
+    \item \textbf{Función generadora de momentos.} Dada una variable aleatoria $X$, se define la función generadora de momentos como:
+    \begin{align*}
+        m_{\text{X}}(t) = m(t) := \text{E}(e^{tX})
+    \end{align*}
+
+    \item \textbf{$X \sim \text{Binomial}(n, p)$, dónde $n \in \mathbb{N}$ y $p \in [0, 1]$,} entonces:
+    \begin{align*}
+        f(x) &= \binom{n}{x} p^x (1-p)^{n-x}, \quad \text{para } x \in \{0, 1, \ldots, n\}
+    \end{align*}
+
+    \item \textbf{$X \sim \text{Poisson}(\lambda)$, dónde $\lambda > 0$,} entonces:
+    \begin{align*}
+        f(x) &= e^{-\lambda} \dfrac{\lambda^x}{x!}, \quad \text{para } x \in \mathbb{N}
+    \end{align*}
+
+    \item \textbf{$X \sim \text{Gamma}(\alpha, \beta)$, dónde $\alpha > 0$ y $\beta > 0$,} entonces:
+    \begin{align*}
+        f(x) &= \dfrac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x}, \quad \text{para } x > 0,
+    \end{align*}
+    dónde:
+    \begin{align*}
+        \Gamma(\alpha) = \int_0^{\infty} x^{\alpha-1} e^{-x} dx
+    \end{align*}
+
+    \item \textbf{$X \sim \text{Normal}(\mu, \sigma^2)$, dónde $\mu \in \mathbb{R}$ y $\sigma^2 > 0$,} entonces:
+    \begin{align*}
+        f(x) &= \dfrac{1}{\sqrt{2\pi\sigma^2}} e^{-\dfrac{(x-\mu)^2}{2\sigma^2}}, \quad \text{para } x \in \mathbb{R}
+    \end{align*}
+\end{itemize}
+
+
+\end{document}
