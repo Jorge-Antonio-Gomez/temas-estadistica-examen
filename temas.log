@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.6)  1 DEC 2022 05:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.6)  1 DEC 2022 12:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -186,6 +186,7 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count197
 \pdfmajorversion=\count198
+Package hyperref Info: Option `colorlinks' set `true' on input line 4421.
 Package hyperref Info: Hyper figures OFF on input line 4547.
 Package hyperref Info: Link nesting OFF on input line 4552.
 Package hyperref Info: Hyper index ON on input line 4555.
@@ -212,7 +213,7 @@ Package hyperref Info: Hyper figures OFF on input line 6430.
 Package hyperref Info: Link nesting OFF on input line 6435.
 Package hyperref Info: Hyper index ON on input line 6438.
 Package hyperref Info: backreferencing OFF on input line 6445.
-Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring ON on input line 6448.
 Package hyperref Info: Link coloring with OCG OFF on input line 6455.
 Package hyperref Info: PDF/A mode OFF on input line 6460.
 LaTeX Info: Redefining \ref on input line 6500.
@@ -343,7 +344,7 @@ LaTeX Font Info:    ... okay on input line 25.
 \everyMPtoPDFconversion=\toks30
 )
 \AtBeginShipoutBox=\box51
-Package hyperref Info: Link coloring OFF on input line 25.
+Package hyperref Info: Link coloring ON on input line 25.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -410,18 +411,6 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 28.
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 
-LaTeX Warning: Hyper reference `subsec:funciongeneradora_poisson' on page 1 undefined on input line 57.
-
-
-LaTeX Warning: Hyper reference `subsec:esperanza_poisson' on page 1 undefined on input line 59.
-
-
-LaTeX Warning: Hyper reference `subsec:varianza_poisson' on page 1 undefined on input line 61.
-
-
-LaTeX Warning: Hyper reference `subsec:distribucion_gamma' on page 1 undefined on input line 65.
-
-
 LaTeX Warning: Hyper reference `subsec:funciongeneradora_gamma' on page 1 undefined on input line 68.
 
 
@@ -459,34 +448,34 @@ Overfull \hbox (10.48228pt too wide) detected at line 249
 []
  []
 
-[5] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 348.
- [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 348.
+[5] [6] [7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 404.
+ [8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 404.
  (/home/quantum/documents/personalProjects/CIDE/3_semestre/estadística/examen/Temas/temas.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 348.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 348.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 404.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 404.
 Package rerunfilecheck Info: File `temas.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 348.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 404.
  ) 
 Here is how much of TeX's memory you used:
- 8732 strings out of 483183
- 127730 string characters out of 5966292
- 402756 words of memory out of 5000000
- 23542 multiletter control sequences out of 15000+600000
- 543249 words of font info for 71 fonts, out of 8000000 for 9000
+ 8744 strings out of 483183
+ 127857 string characters out of 5966292
+ 403074 words of memory out of 5000000
+ 23544 multiletter control sequences out of 15000+600000
+ 543947 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,19n,37p,614b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/quantum/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on /home/quantum/documents/personalProjects/CIDE/3_semestre/estadística/examen/Temas/temas.pdf (7 pages, 175099 bytes).
+ </home/quantum/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
+Output written on /home/quantum/documents/personalProjects/CIDE/3_semestre/estadística/examen/Temas/temas.pdf (8 pages, 188928 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 141 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
+ 193 PDF objects out of 1000 (max. 8388607)
+ 164 compressed objects within 2 object streams
+ 53 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
